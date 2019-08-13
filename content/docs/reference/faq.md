@@ -2,7 +2,7 @@
 title: "FAQ"
 menu:
   reference:
-    weight: 11
+    weight: 12
 ---
 
 ## How can I add support for my favorite cloud?

@@ -1,0 +1,10 @@
+[[entries]]
+term = "Component"
+description = "A Pulumi component is a logical group of resources that contains other components and physical cloud resources."
+link = "/docs/reference/programming-model/#components"
+
+[[entries]]
+term = "Stack"
+description = "A stack is an isolated, independently configurable instance of a Pulumi program. Stacks are commonly used to denote different phases of development (such as development, staging and production) or feature branches (such as feature-x-dev, jane-feature-x-dev)."
+link = "/docs/reference/stack"
+
