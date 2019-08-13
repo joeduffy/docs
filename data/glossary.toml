@@ -8,3 +8,8 @@ term = "Stack"
 description = "A stack is an isolated, independently configurable instance of a Pulumi program. Stacks are commonly used to denote different phases of development (such as development, staging and production) or feature branches (such as feature-x-dev, jane-feature-x-dev)."
 link = "/docs/reference/stack"
 
+[[entries]]
+term = "Program"
+description = "Pulumi programs are authored in general-purpose programming languages such as JavaScript or Python. You can use any packages supported by the language’s package manager, as well as Pulumi packages."
+link = "/docs/reference/programming-model/#programs"
+
