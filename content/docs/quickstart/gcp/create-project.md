@@ -34,7 +34,6 @@ $ pulumi new gcp-python
 
 > If this is your first time running `pulumi new` or most other `pulumi` commands, you will be prompted to log in to the [Pulumi service](https://app.pulumi.com). The [Pulumi CLI](/docs/reference/commands) works in tandem with the Pulumi service in order to deliver a reliable experience. It is free for individual use, with [additional features available for teams](https://www.pulumi.com/pricing/). Hitting `ENTER` at the prompt opens up a web browser allowing you to either sign in or sign up. 
 
-> Alternatively, you may [login]({{< relref "/docs/reference/cli/pulumi_login.md" >}}) or [logout]({{< relref "/docs/reference/cli/pulumi_logout.md" >}}) explicitly if you prefer. See the [FAQ]({{< relref "/docs/reference/faq.md#can-i-use-pulumi-without-depending-on-pulumi-com" >}}) for more information.
 After logging in, the CLI will proceed with walking you through creating a new project.
 
 ```
