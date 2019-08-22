@@ -38,6 +38,7 @@ const contentBucket = new aws.s3.Bucket(
             indexDocument: "index.html",
             errorDocument: "404.html",
         },
+        forceDestroy: true,
     },
     {
         protect: false,
@@ -68,9 +69,10 @@ const logsBucket = new aws.s3.Bucket(
     {
         bucket: `${config.targetDomain}-logs`,
         acl: "private",
+        forceDestroy: true,
     },
     {
-        protect: true,
+        protect: false,
     });
 
 const fiveMinutes = 60 * 5;
@@ -105,6 +107,7 @@ const baseCacheBehavior = {
 // https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront
 const distributionArgs: aws.cloudfront.DistributionArgs = {
     enabled: true,
+    aliases: [config.targetDomain],
 
     // We only specify one origin for this distribution: the S3 content bucket.
     origins: [
@@ -222,7 +225,7 @@ const cdn = new aws.cloudfront.Distribution(
     "cdn",
     distributionArgs,
     {
-        protect: true,
+        protect: false,
         dependsOn: [ contentBucket, logsBucket ],
     });
 
@@ -268,6 +271,10 @@ crawlDirectory(
         // We do this so that #anchors in URLs flow across to the redirected page, which
         // doesn't happen when meta refresh tags are used for redirecting.
         const redirect = getMetaRefreshRedirect(filePath);
+
+        if (redirect) {
+            console.log(`Redirect: ${relativeFilePath} => ${redirect}`);
+        }
 
         const contentFile = new aws.s3.BucketObject(
             relativeFilePath,

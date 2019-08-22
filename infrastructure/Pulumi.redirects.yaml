@@ -1,0 +1,5 @@
+config:
+  aws:region: us-west-2
+  www.pulumi.com:certificateArn: arn:aws:acm:us-east-1:086028354146:certificate/4df8607d-46ce-468b-a6a3-a8fb46bc0cb8
+  www.pulumi.com:pathToWebsiteContents: ../public
+  www.pulumi.com:targetDomain: redirects.pulumi-test.io
